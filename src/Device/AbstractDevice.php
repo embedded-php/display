@@ -3,14 +3,14 @@ declare(strict_types = 1);
 
 namespace EmbeddedPhp\Display\Device;
 
-use InvalidArgumentException;
+use EmbeddedPhp\Core\Protocol\ProtocolInterface;
 use EmbeddedPhp\Display\Canvas\CanvasInterface;
 use EmbeddedPhp\Display\Canvas\EmptyCanvas;
 use EmbeddedPhp\Display\Capabilities\ColorMode;
 use EmbeddedPhp\Display\Capabilities\Rotate;
-use EmbeddedPhp\Core\Protocol\ProtocolInterface;
 use EmbeddedPhp\Display\Utils\BoundingBox;
 use EmbeddedPhp\Display\Utils\Dimension;
+use InvalidArgumentException;
 use Webmozart\Assert\Assert;
 
 /**

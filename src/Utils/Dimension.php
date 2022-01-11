@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 namespace EmbeddedPhp\Display\Utils;
 
-use EmbeddedPhp\Display\Utils\Dimension;
-
 final class Dimension {
   private int $width;
   private int $height;
@@ -27,13 +25,13 @@ final class Dimension {
    */
   public function isSupported(array $supportedDimensions): bool {
     $supportedDimensions = array_map(
-      function (Dimension $dimension): array {
+      static function (Dimension $dimension): array {
         return $dimension->toArray();
       },
       $supportedDimensions
     );
 
-    return in_array([$this->width, $this->height], $supportedDimensions);
+    return in_array([$this->width, $this->height], $supportedDimensions, true);
   }
 
   /**

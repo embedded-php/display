@@ -3,9 +3,9 @@ declare(strict_types = 1);
 
 namespace EmbeddedPhp\Display\FrameBuffer;
 
-use Generator;
 use EmbeddedPhp\Display\Canvas\CanvasInterface;
 use EmbeddedPhp\Display\Utils\BoundingBox;
+use Generator;
 
 /**
  * Always renders the full frame every time. This is slower than \EmbeddedPhp\Display\FrameBuffer\FrameDiff as there are

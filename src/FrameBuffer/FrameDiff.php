@@ -3,10 +3,9 @@ declare(strict_types = 1);
 
 namespace EmbeddedPhp\Display\FrameBuffer;
 
-use Generator;
 use EmbeddedPhp\Display\Canvas\CanvasInterface;
 use EmbeddedPhp\Display\Utils\BoundingBox;
-use Webmozart\Assert\Assert;
+use Generator;
 
 /**
  * Compare the current frame to the previous frame and tries to calculate the differences: this will either yield

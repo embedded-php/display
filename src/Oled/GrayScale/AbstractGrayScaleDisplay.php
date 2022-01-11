@@ -6,11 +6,8 @@ namespace EmbeddedPhp\Display\Oled\GrayScale;
 use EmbeddedPhp\Core\Protocol\ProtocolInterface;
 use EmbeddedPhp\Display\Canvas\CanvasInterface;
 use EmbeddedPhp\Display\Device\AbstractDevice;
-use EmbeddedPhp\Display\Device\DeviceInterface;
 use EmbeddedPhp\Display\FrameBuffer\FrameBufferInterface;
 use EmbeddedPhp\Display\Utils\BoundingBox;
-use EmbeddedPhp\Display\Utils\Dimension;
-use InvalidArgumentException;
 
 /**
  * @link https://github.com/rm-hull/luma.oled/blob/master/luma/oled/device/grayscale.py
@@ -100,7 +97,7 @@ abstract class AbstractGrayScaleDisplay extends AbstractDevice {
 
     return new BoundingBox(
       $top,
-      ($right % 4 == 0 ? $right : ($right & 0xFFFC) + 0x04),
+      ($right % 4 === 0 ? $right : ($right & 0xFFFC) + 0x04),
       $bottom,
       $left & 0xFFFC
     );

@@ -3,8 +3,8 @@ declare(strict_types = 1);
 
 namespace EmbeddedPhp\Display\Canvas;
 
-use GdImage;
 use EmbeddedPhp\Display\Utils\Dimension;
+use GdImage;
 use RuntimeException;
 
 final class GdExt implements CanvasInterface {

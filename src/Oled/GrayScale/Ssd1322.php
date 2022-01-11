@@ -1,14 +1,13 @@
 <?php
 declare(strict_types = 1);
 
-namespace LumaPHP\Oled\GrayScale;
+namespace EmbeddedPhp\Display\Oled\GrayScale;
 
 use EmbeddedPhp\Core\Protocol\ProtocolInterface;
 use EmbeddedPhp\Display\Capabilities\ColorMode;
 use EmbeddedPhp\Display\Capabilities\Rotate;
 use EmbeddedPhp\Display\FrameBuffer\FrameBufferInterface;
 use EmbeddedPhp\Display\FrameBuffer\FullFrame;
-use EmbeddedPhp\Display\Oled\GrayScale\AbstractGrayScaleDisplay;
 use EmbeddedPhp\Display\Utils\Dimension;
 
 class Ssd1322 extends AbstractGrayScaleDisplay {
@@ -19,8 +18,8 @@ class Ssd1322 extends AbstractGrayScaleDisplay {
   protected function sendCommand(int ...$commands): void {
     $params = [];
     if (count($commands) > 1) {
-      $params = array_slice($commands, 1);
-      $command = array_slice($commands, 0, 1);
+      $params   = array_slice($commands, 1);
+      $commands = array_slice($commands, 0, 1);
     }
 
     $this->protocol->sendCommand(...$commands);
